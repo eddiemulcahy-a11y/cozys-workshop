@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cozy's — Policy & Procedures Workshop</title>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Futura PT',Futura,system-ui,sans-serif;background:#f7f5f3;color:#000;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1100px;margin:0 auto;padding:24px 32px;min-height:100vh;display:flex;flex-direction:column}
+.progress{display:flex;gap:4px;margin-bottom:10px}
+.dot{height:5px;border-radius:2px;cursor:pointer;transition:all .2s}
+.sep{width:1px;height:14px;background:#ddd;margin:0 3px;align-self:center}
+.meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.sec-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px}
+.counter{font-size:12px;color:#9a9a9a}
+.counter span{margin-left:12px;font-size:11px;color:#ccc}
+h1{font-size:clamp(28px,4vw,40px);font-weight:700;letter-spacing:.5px;text-transform:uppercase;line-height:1.15;margin-bottom:2px}
+.subtitle{font-size:clamp(16px,2vw,20px);color:#5a5a5a;font-family:Georgia,serif;font-style:italic;margin-bottom:8px}
+.prompts{background:#000;border-radius:6px;padding:16px 24px;margin:16px 0 20px}
+.prompts .label{font-size:11px;font-weight:700;color:#F15B26;text-transform:uppercase;letter-spacing:2px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
+.prompts .hide{color:#777;cursor:pointer;font-size:11px;font-weight:400;letter-spacing:0}
+.prompts p{font-size:17px;color:#ccc;padding:6px 0;line-height:1.6;font-family:Georgia,serif}
+.prompts p b{color:#F15B26;font-family:'Futura PT',Futura,sans-serif;margin-right:8px}
+.show-pr{font-size:12px;color:#F15B26;cursor:pointer;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin:12px 0}
+.body{flex:1;margin-top:16px}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-top:28px;padding-top:16px;border-top:2px solid #e8e8e8}
+.btn{padding:12px 28px;border-radius:6px;font-size:15px;font-weight:700;font-family:inherit;text-transform:uppercase;letter-spacing:.5px;cursor:pointer}
+.btn-prev{border:2px solid #ddd;background:#fff;color:#000}
+.btn-next{border:none;background:#F15B26;color:#fff}
+.btn:disabled{opacity:.3;cursor:default}
+.nav-hint{font-size:14px;color:#9a9a9a;font-family:Georgia,serif;font-style:italic}
+.footer{display:flex;justify-content:space-between;align-items:center;margin-top:16px;padding:0 4px}
+.footer span{font-size:10px;color:#9a9a9a;text-transform:uppercase;letter-spacing:1.5px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{background:#fff;border-radius:8px;padding:28px}
+.card-sm{background:#fff;border-radius:8px;padding:24px}
+.card-row{background:#fff;border-radius:6px;padding:16px 20px;display:flex;align-items:center;gap:16px}
+.num{width:40px;height:40px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;flex-shrink:0}
+.tag{font-size:11px;font-weight:700;padding:3px 10px;border-radius:4px;text-transform:uppercase;letter-spacing:.5px}
+.chip{padding:8px 16px;border-radius:6px;font-size:15px;font-weight:500;font-family:Georgia,serif;display:inline-block}
+.bl{border-left:4px solid}
+.bt{border-top:3px solid}
+.up{text-transform:uppercase;letter-spacing:.5px}
+.geo{font-family:Georgia,serif}
+.geo-i{font-family:Georgia,serif;font-style:italic}
+.or{color:#F15B26}.db{color:#0C3D4C}.rd{color:#E21C21}.gy{color:#5a5a5a}.lg{color:#9a9a9a}.wh{color:#fff}
+.bg-bk{background:#000}.bg-wh{background:#fff}.bg-or10{background:#fef0eb}.bg-db10{background:#e8eff1}.bg-rd10{background:#fde8e8}
+.fw9{font-weight:900}.fw7{font-weight:700}.fw6{font-weight:600}
+.mb4{margin-bottom:4px}.mb6{margin-bottom:6px}.mb8{margin-bottom:8px}.mb12{margin-bottom:12px}.mb14{margin-bottom:14px}.mb16{margin-bottom:16px}.mb20{margin-bottom:20px}.mb28{margin-bottom:28px}.mb36{margin-bottom:36px}.mb40{margin-bottom:40px}
+.f11{font-size:11px}.f12{font-size:12px}.f13{font-size:13px}.f14{font-size:14px}.f15{font-size:15px}.f16{font-size:16px}.f17{font-size:17px}.f18{font-size:18px}.f19{font-size:19px}.f20{font-size:20px}.f22{font-size:22px}.f24{font-size:24px}.f36{font-size:36px}
+.ls1{letter-spacing:1px}.ls15{letter-spacing:1.5px}.ls2{letter-spacing:2px}
+.lh16{line-height:1.6}.lh17{line-height:1.7}
+.arrow{color:#F15B26;font-weight:700;margin-right:6px}
+.odigo-logo svg{display:inline-block;vertical-align:middle}
+.slide{display:none}.slide.active{display:block}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="progress" id="progress"></div>
+<div class="meta">
+  <div class="sec-label" id="secLabel"></div>
+  <div class="counter"><span id="counter"></span><span>← → navigate · P prompts</span></div>
+</div>
+<h1 id="title"></h1>
+<div class="subtitle" id="subtitle"></div>
+<div id="promptBox"></div>
+<div class="body" id="body"></div>
+<div class="nav">
+  <button class="btn btn-prev" id="prevBtn" onclick="go(-1)">Previous</button>
+  <div class="nav-hint" id="navHint"></div>
+  <button class="btn btn-next" id="nextBtn" onclick="go(1)">Next</button>
+</div>
+<div class="footer">
+  <span>Clinton, WA</span>
+  <span class="odigo-logo">Presented by <svg height="14" viewBox="0 0 220 56" fill="none"><text x="0" y="44" font-family="Lato,sans-serif" font-weight="900" font-size="48" fill="#9a9a9a" letter-spacing="-1">odi</text><text x="88" y="44" font-family="Lato,sans-serif" font-weight="900" font-size="48" fill="#218884" letter-spacing="-1">go</text><polygon points="178,14 178,42 202,28" fill="#218884"/></svg></span>
+</div>
+</div>
+<script>
+const OR="#F15B26",DB="#0C3D4C",RD="#E21C21",BK="#000";
+const slides=[
+{sec:"Welcome",t:"Policy & procedures workshop",sub:"Building a system your team can actually use",ac:OR,
+body:`<div style="margin-bottom:32px"><img src="logo.png" alt="The Shrimp Shack at Cozy's" style="height:90px;object-fit:contain" onerror="this.outerHTML='<div style=\\'font-weight:700;font-size:28px\\'>The Shrimp Shack <span style=\\'color:#F15B26\\'>at</span> COZY\\'S</div>'"></div>
+<p class="f22 gy lh17 geo" style="max-width:720px;margin-bottom:40px">A working session to map out a complete, role-specific policy & procedures manual — covering every position, every shift, every scenario.</p>
+<div class="grid3 mb40">
+<div class="card bt" style="border-color:${OR}"><div class="f11 lg up ls2 mb8 fw6">Facilitated by</div><div class="f22 fw7">Eddie Mulcahy</div><div class="f15 gy geo" style="margin-top:4px">CMO, The Odigo Group</div></div>
+<div class="card bt" style="border-color:${DB}"><div class="f11 lg up ls2 mb8 fw6">With</div><div class="f22 fw7">Ann Haines</div><div class="f15 gy geo" style="margin-top:4px">Owner</div></div>
+<div class="card bt" style="border-color:${BK}"><div class="f11 lg up ls2 mb8 fw6">Duration</div><div class="f22 fw7">~2.5 hours</div><div class="f15 gy geo" style="margin-top:4px">March 14, 2026</div></div>
+</div>
+<div class="bg-bk" style="border-radius:8px;padding:28px">
+<div class="fw7 or f12 up ls2 mb14">Today's agenda</div>
+<div class="grid2" style="gap:10px">${["Discovery & pain points","Manual architecture","Universal policies deep dive","Role-specific SOPs","Delivery & next steps"].map((x,i)=>`<div class="f18 wh" style="padding:8px 0;display:flex;align-items:center;gap:12px"><span style="background:${OR};color:#fff;width:30px;height:30px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex-shrink:0">${i+1}</span>${x}</div>`).join("")}
+</div></div>`},
+
+{sec:"Discovery",t:"Why are we here?",sub:"The case for a written system",ac:OR,
+pr:["What's the biggest recurring headache that better documentation would fix?","When things go wrong — what goes wrong most often?"],
+body:`<div class="grid2">${[{ic:"⟳",t:"Consistency",d:"Every shift runs the same way, no matter who's working",c:OR},{ic:"△",t:"Protection",d:"Documented policies protect you in disputes and inspections",c:DB},{ic:"→",t:"Onboarding",d:"New hires get up to speed in days, not weeks",c:BK},{ic:"◎",t:"Accountability",d:"Clear expectations = fair enforcement = less drama",c:OR}].map(c=>`<div class="card bl" style="border-color:${c.c}"><div class="f36 mb12" style="opacity:.7">${c.ic}</div><div class="fw7 f20 mb6 up">${c.t}</div><div class="f17 gy lh16 geo">${c.d}</div></div>`).join("")}</div>`},
+
+{sec:"Discovery",t:"A day in the life",sub:"Walk me through Cozy's — open to close",ac:OR,
+pr:["Who opens the restaurant? What time? Walk me through that first hour.","What does the lunch rush look like — how many covers? Who's on the floor?","Who closes? What does that process look like?","Where do things break down during a typical day?"],
+body:`<div style="display:flex;gap:2px;margin-bottom:36px">${[{t:"Open",c:OR},{t:"Prep",c:"#6d9aa8"},{t:"Lunch",c:OR},{t:"Transition",c:"#9a9a9a"},{t:"Dinner",c:DB},{t:"Close",c:BK}].map((s,i)=>`<div style="flex:1;text-align:center"><div style="background:${s.c};height:12px;border-radius:${i===0?"4px 0 0 4px":i===5?"0 4px 4px 0":"0"}"></div><div class="f14 gy fw6 up" style="margin-top:10px;letter-spacing:.5px">${s.t}</div></div>`).join("")}</div>
+<div class="grid2" style="gap:16px">${[{t:"Opening routine",d:"Who arrives first? What gets done before doors open?"},{t:"Prep workflow",d:"What gets prepped daily? Who owns it?"},{t:"Service flow",d:"How do orders move from table to kitchen to guest?"},{t:"Closing routine",d:"Last guest out to lights off — every step."}].map(c=>`<div class="card-sm bt" style="border-color:${OR}"><div class="fw7 f19 mb8 up">${c.t}</div><div class="f16 gy lh16 geo">${c.d}</div></div>`).join("")}</div>`},
+
+{sec:"Discovery",t:"Role inventory",sub:"Every position at Cozy's",ac:OR,
+pr:["Let's list every position. Who works here?","Which roles have the most turnover?","Are any roles doing double-duty?","Which role would benefit the most from clear documentation?"],
+body:`<div class="grid4">${[{n:"Server",a:"Front of house",c:OR},{n:"Bartender",a:"Bar",c:RD},{n:"Busser",a:"Front of house",c:OR},{n:"Cook",a:"Back of house",c:DB},{n:"Prep cook",a:"Back of house",c:DB},{n:"Pizza cook",a:"Back of house",c:DB},{n:"Dishwasher",a:"Back of house",c:DB},{n:"Manager",a:"Leadership",c:BK}].map(r=>`<div class="bg-wh bt" style="border-color:${r.c};border-radius:8px;padding:24px 16px;text-align:center"><div class="fw7 f20 up">${r.n}</div><div class="f13 fw6 up ls1" style="color:${r.c};margin-top:6px">${r.a}</div></div>`).join("")}</div>`},
+
+{sec:"Architecture",t:"What we're building",sub:"A two-layer system — not a binder that collects dust",ac:DB,
+pr:["Here's the structure I'm proposing — let me walk you through it.","Layer 1 is what every employee gets. Layer 2 goes deep for each role.","A new server gets the company rules AND a step-by-step guide for their actual job."],
+body:`<div class="grid2 mb28" style="gap:24px">
+<div class="bg-bk" style="border-radius:12px;padding:32px"><div class="fw7 f12 or up ls2 mb6">Layer 1</div><div class="fw7 f24 wh up mb14" style="letter-spacing:.5px">Universal employee handbook</div><div class="f17 lh17 geo" style="color:#bbb">Every employee gets this on Day 1. Covers employment policies, conduct, food safety, alcohol service, workplace safety, and disciplinary process.</div><div class="fw7 f12 or up ls2" style="margin-top:20px">The "what" and "why"</div></div>
+<div class="bg-wh" style="border-radius:12px;padding:32px;border:2px solid ${DB}"><div class="fw7 f12 db up ls2 mb6">Layer 2</div><div class="fw7 f24 up mb14" style="letter-spacing:.5px">Role-specific SOP packets</div><div class="f17 gy lh17 geo">Each position gets their own supplement — opening duties, core shift tasks, closing duties, scenario handling. Checklist-driven, station-ready.</div><div class="fw7 f12 or up ls2" style="margin-top:20px">The "how"</div></div>
+</div>
+<div class="bg-or10 bl" style="border-color:${OR};border-radius:8px;padding:24px"><div class="fw7 f19 up mb6" style="letter-spacing:.5px">Both restaurants, one system</div><div class="f17 gy lh16 geo">Since you own both Cozy's and Shrimp Shack, we build a shared core template with restaurant-specific addendums. Build once, deploy twice.</div></div>`},
+
+{sec:"Architecture",t:"Inside the handbook",sub:"13 sections every employee needs",ac:DB,
+pr:["Here are the 13 sections that make up a complete restaurant employee handbook.","Which of these do you already have — even informally?","Which ones feel most urgent to get right first?"],
+body:`<div class="grid2" style="gap:10px">${[{n:1,t:"Welcome & culture",d:"Story, mission, values"},{n:2,t:"Employment basics",d:"At-will, EEO, ADA"},{n:3,t:"Scheduling & attendance",d:"Call-outs, no-shows, swaps"},{n:4,t:"Dress code & appearance",d:"Uniforms, hygiene, grooming"},{n:5,t:"Code of conduct",d:"Behavior, respect, harassment"},{n:6,t:"Compensation & tips",d:"Pay, tip reporting, pooling"},{n:7,t:"Time off & leave",d:"PTO, WA sick leave, FMLA"},{n:8,t:"Food safety",d:"Food Worker Card, hygiene"},{n:9,t:"Alcohol service",d:"MAST permit, ID checks, cut-offs"},{n:10,t:"Workplace safety",d:"Injuries, emergencies, OSHA"},{n:11,t:"Technology & social media",d:"POS, phones, online presence"},{n:12,t:"Disciplinary process",d:"Verbal → written → term"},{n:13,t:"Acknowledgment",d:"Signature confirming receipt"}].map(s=>`<div class="bg-wh" style="display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:6px"><span class="num" style="background:#000;color:${OR}">${s.n}</span><div><div class="fw7 f17 up" style="letter-spacing:.3px">${s.t}</div><div class="f14 lg geo">${s.d}</div></div></div>`).join("")}</div>`},
+
+{sec:"Compliance",t:"Washington state requirements",sub:"Non-negotiable items for the manual",ac:RD,
+pr:["Before we go further — Washington state requires some specific things in every restaurant.","Ann, is everyone current on their Food Worker Cards?","Does every bartender and server have their MAST permit?","Do you have a Certified Food Protection Manager on staff?"],
+body:`<div style="display:flex;flex-direction:column;gap:12px">${[{t:"WA Food Worker Card",tl:"Within 14 days of hire",d:"$10 online. First card valid 2 years, renewals 3 years. Must be on-site during inspections. ALL food workers required.",tg:"Required",tc:RD},{t:"MAST permit (full bar)",tl:"Within 60 days of hire",d:"Class 12 (21+) or Class 13 (18-20). Valid 5 years. At least one Class 12 on duty at all times. Penalties up to $500 fine and/or 90 days jail.",tg:"Required",tc:RD},{t:"Certified Food Protection Manager",tl:"At least one on staff",d:"ANSI-approved exam (ServSafe). Certificate on file on-site. Responsible for food safety program.",tg:"Required",tc:RD},{t:"WA Paid Sick Leave",tl:"Ongoing",d:"1 hour per 40 hours worked. Usable after 90 days. ALL employees including part-time.",tg:"Required",tc:RD},{t:"Dram shop liability",tl:"Staff awareness",d:"WA holds you liable for serving minors or intoxicated persons. Training + incident docs are your shield.",tg:"Critical",tc:OR}].map(r=>`<div class="bg-wh bl" style="border-color:${r.tc};border-radius:8px;padding:18px 22px"><div style="display:flex;align-items:center;gap:12px;margin-bottom:6px"><span class="fw7 f18 up" style="letter-spacing:.3px">${r.t}</span><span class="tag" style="background:${r.tc===RD?"#fde8e8":"#fef0eb"};color:${r.tc}">${r.tg}</span></div><div class="f12 fw7 up ls1" style="color:${DB};margin-bottom:6px">${r.tl}</div><div class="f16 gy lh16 geo">${r.d}</div></div>`).join("")}</div>`},
+
+{sec:"Deep dive",t:"Let's fill in the details",sub:"The policies that matter most — your answers drive the manual",ac:OR,
+pr:["Now I'm going to ask about each area and capture your current rules.","Let's start with scheduling — how does it work today?","What's the call-out policy? No-show consequences?"],
+body:`<div class="grid2" style="gap:16px">${[{t:"Scheduling & attendance",qs:["How far ahead are schedules posted?","Call-out policy — how much notice?","No-show consequences?","Can employees swap shifts?"],c:OR},{t:"Dress code",qs:["Uniforms or guidelines?","Hair, nails, jewelry rules?","Who provides uniforms?"],c:DB},{t:"Tips & compensation",qs:["Tip pooling or individual?","Credit card tip distribution?","Pay periods?"],c:BK},{t:"Food safety",qs:["Current temp-checking process?","Walk-in labeling and dating?","Allergen communication?","When must someone stay home?"],c:DB},{t:"Alcohol service",qs:["Current ID-checking process?","Who decides to cut someone off?","What happens after a cut-off?"],c:RD},{t:"Discipline",qs:["What happens when someone messes up?","Is it consistent?","Has documentation been an issue?"],c:BK}].map(tp=>`<div class="card-sm bt" style="border-color:${tp.c}"><div class="fw7 f18 up mb14" style="letter-spacing:.5px">${tp.t}</div>${tp.qs.map((q,j)=>`<div class="f16 gy lh15 geo" style="padding:7px 0;${j<tp.qs.length-1?"border-bottom:1px solid #f0f0f0":""}"><span class="arrow">→</span>${q}</div>`).join("")}</div>`).join("")}</div>`},
+
+{sec:"Role SOPs",t:"Role-specific procedures",sub:"What a great shift looks like — for every position",ac:DB,
+pr:["For each role we'll build: opening duties, core tasks, closing duties, and how to handle common situations.","Let's start with servers — walk me through what great service looks like at Cozy's.","Now bartenders — any specific drink standards, pour policies, or house cocktails?","And the manager on duty — what does their open and close look like?"],
+body:`<div style="display:flex;flex-direction:column;gap:20px">${[{n:"Server",c:OR,bg:"#fef0eb",items:["Table greeting standard","Order-taking process","Upselling expectations","Food running protocol","Table maintenance","Checkout & payment","Side work","Open & close duties"]},{n:"Cook",c:DB,bg:"#e8eff1",items:["Station setup","Recipe adherence","Plating standards","Temp requirements","Allergen awareness","Station breakdown","Open & close duties"]},{n:"Bartender",c:RD,bg:"#fde8e8",items:["Recipe standards & pour counts","ID verification","Cut-off procedure","Cash handling at bar","Bar open & close","Garnish prep & stock"]},{n:"Manager / shift lead",c:BK,bg:"#f0f0f0",items:["Opening checklist","Pre-shift meeting","Cash & drawer management","Floor coaching","Incident handling","Vendor receiving","Nightly reporting","Closing checklist"]}].map(r=>`<div class="bg-wh bl" style="border-color:${r.c};border-radius:8px;padding:28px"><div class="fw7 f22 up ls1 mb16">${r.n}</div><div style="display:flex;flex-wrap:wrap;gap:8px">${r.items.map(i=>`<span class="chip" style="background:${r.bg};color:${r.c==="000"?BK:r.c}">${i}</span>`).join("")}</div></div>`).join("")}</div>`},
+
+{sec:"Next steps",t:"What you're getting",sub:"The complete deliverable package",ac:OR,
+pr:["Here's exactly what we'll deliver and when.","Everything is branded to Cozy's and built so you can update it yourself.","The station cards are the secret weapon — they live at each workstation."],
+body:`<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px">${[{n:"Universal employee handbook",d:"13 sections, branded, digital + print-ready",p:"Wk 1–2"},{n:"Role-specific SOP packets",d:"One per position, checklist-driven, station-ready",p:"Wk 2–4"},{n:"Quick-reference station cards",d:"Laminated one-pagers — open, close, safety, alcohol",p:"Wk 4–5"},{n:"New hire orientation checklist",d:"Manager's guide for Day 1 through Day 14",p:"Wk 4–5"},{n:"Manager training session",d:"How to onboard using the manual and enforce standards",p:"Wk 5–6"},{n:"Employee re-onboarding plan",d:"Roll out to existing staff with acknowledgment forms",p:"Wk 5–6"},{n:"Quarterly review template",d:"Keep the manual alive — review, update, re-sign",p:"Ongoing"}].map((d,i)=>`<div class="card-row"><div class="num" style="background:#000;color:${OR}">${i+1}</div><div style="flex:1"><div class="fw7 f18 up" style="letter-spacing:.3px">${d.n}</div><div class="f15 gy geo" style="margin-top:2px">${d.d}</div></div><div class="bg-db10 fw7 f13 db up" style="padding:6px 14px;border-radius:6px;white-space:nowrap;letter-spacing:.5px">${d.p}</div></div>`).join("")}</div>
+<div class="bg-bk" style="border-radius:8px;padding:24px"><div class="fw7 or f12 up ls2 mb6">Shrimp Shack add-on</div><div class="f18 lh16 geo" style="color:#bbb">Everything above templates to Shrimp Shack with restaurant-specific addendums. One investment, two restaurants fully covered.</div></div>`},
+
+{sec:"Next steps",t:"Timeline & next steps",sub:"From today to a fully documented operation",ac:OR,
+pr:["Here's the 6-week plan to get this done.","After today I'll have everything I need to start drafting.","What questions do you have? What feels most important to nail?"],
+body:`<div style="display:flex;flex-direction:column;gap:4px;margin-bottom:36px">${[{p:"Today",t:"Discovery & architecture",c:OR,d:"Map roles, capture pain points, align on structure"},{p:"Weeks 1–2",t:"Universal handbook draft",c:DB,d:"13-section handbook for your review"},{p:"Weeks 2–4",t:"Role-specific SOPs",c:OR,d:"SOP packets for all positions"},{p:"Weeks 4–5",t:"Station materials",c:"#6d9aa8",d:"Quick-reference cards, orientation checklist"},{p:"Weeks 5–6",t:"Rollout & training",c:BK,d:"Manager training, staff re-onboarding, handoff"}].map((ph,i)=>`<div style="display:flex;align-items:stretch"><div style="width:80px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;padding-top:20px"><div style="width:18px;height:18px;border-radius:50%;background:${ph.c};border:4px solid #f7f5f3;box-shadow:0 0 0 2px ${ph.c}"></div>${i<4?'<div style="width:3px;flex:1;background:#ddd;margin-top:2px"></div>':""}</div><div class="bg-wh" style="flex:1;padding:16px 24px;border-radius:8px;margin-bottom:2px"><div class="f12 fw7 up ls15" style="color:${ph.c}">${ph.p}</div><div class="fw7 f20 up" style="margin-top:2px;letter-spacing:.5px">${ph.t}</div><div class="f16 gy geo" style="margin-top:4px">${ph.d}</div></div></div>`).join("")}</div>
+<div class="bg-wh bt" style="border-color:${OR};border-radius:8px;padding:28px"><div class="fw7 f20 up mb14" style="letter-spacing:.5px">Immediate next steps</div>${["Eddie drafts table of contents — sends to Ann for approval","Ann shares any existing documentation (menus, old rules, checklists)","Eddie sends formal proposal for the project","Week 1 kickoff — handbook drafting begins"].map((s,i)=>`<div class="f18 gy geo lh15" style="padding:8px 0"><span class="or fw7">${i+1}.</span> ${s}</div>`).join("")}</div>`},
+];
+
+let cur=0,showP=true;
+
+function render(){
+  const s=slides[cur];
+  let progHTML="";
+  slides.forEach((sl,i)=>{
+    const sec=i===0||slides[i].sec!==slides[i-1].sec;
+    if(sec&&i!==0) progHTML+=`<div class="sep"></div>`;
+    progHTML+=`<div class="dot" onclick="goTo(${i})" style="width:${i===cur?44:28}px;background:${i===cur?(s.ac||OR):i<cur?OR+"66":"#ddd"}"></div>`;
+  });
+  document.getElementById("progress").innerHTML=progHTML;
+  document.getElementById("secLabel").style.color=s.ac||OR;
+  document.getElementById("secLabel").textContent=s.sec;
+  document.getElementById("counter").textContent=`${cur+1} / ${slides.length}`;
+  document.getElementById("title").textContent=s.t;
+  document.getElementById("subtitle").textContent=s.sub;
+  if(s.pr&&showP){
+    document.getElementById("promptBox").innerHTML=`<div class="prompts"><div class="label">Your talking points <span class="hide" onclick="toggleP()">hide (P)</span></div>${s.pr.map((p,i)=>`<p><b>${i+1}.</b>${p}</p>`).join("")}</div>`;
+  }else if(s.pr&&!showP){
+    document.getElementById("promptBox").innerHTML=`<div class="show-pr" onclick="toggleP()">Show talking points (P)</div>`;
+  }else{
+    document.getElementById("promptBox").innerHTML="";
+  }
+  document.getElementById("body").innerHTML=s.body;
+  document.getElementById("prevBtn").disabled=cur===0;
+  document.getElementById("nextBtn").disabled=cur===slides.length-1;
+  document.getElementById("nextBtn").textContent=cur===slides.length-1?"Done":"Next";
+  document.getElementById("nextBtn").style.background=cur===slides.length-1?"#ccc":OR;
+  document.getElementById("navHint").textContent=cur<slides.length-1?`Next: ${slides[cur+1].t}`:"End of workshop";
+  window.scrollTo(0,0);
+}
+
+function go(d){const n=cur+d;if(n>=0&&n<slides.length){cur=n;render();}}
+function goTo(i){cur=i;render();}
+function toggleP(){showP=!showP;render();}
+
+document.addEventListener("keydown",e=>{
+  if(e.key==="ArrowRight")go(1);
+  if(e.key==="ArrowLeft")go(-1);
+  if(e.key==="p"||e.key==="P")toggleP();
+});
+
+render();
+</script>
+</body>
+</html>
